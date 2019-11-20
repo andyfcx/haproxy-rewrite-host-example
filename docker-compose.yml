@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  haproxy:
+    image: haproxy:alpine
+    volumes: 
+      - ./haproxy:/usr/local/etc/haproxy
+
+    ports: 
+      - 8080:80
+
+  nginx1:
+    image: nginx:alpine
+    volumes: 
+      - ./nginx1:/etc/nginx
+
+  nginx2:
+    image: nginx:alpine
+    volumes: 
+      - ./nginx2:/etc/nginx
